@@ -799,13 +799,6 @@ fi
 ## image library
 ##
 
-if build "libtiff" "4.5.0"; then
-  download "https://download.osgeo.org/libtiff/tiff-4.5.0.tar.xz"
-  execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static --disable-dependency-tracking --disable-lzma --disable-webp --disable-zstd --without-x
-  execute make -j $MJOBS
-  execute make install
-  build_done "libtiff" "4.5.0"
-fi
 if build "libpng" "1.6.39"; then
   download "https://gigenet.dl.sourceforge.net/project/libpng/libpng16/1.6.39/libpng-1.6.39.tar.gz" "libpng-1.6.39.tar.gz"
   export LDFLAGS="${LDFLAGS}"
